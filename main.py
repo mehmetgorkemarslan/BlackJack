@@ -1,8 +1,13 @@
 from random import shuffle
 
 class Hand:
+    possible_value = []
     def __init__(self, hand):
         self.hand = hand
+    
+    def draw_a_card(self,deck):
+        self.hand.append(deck.pop())
+        #do not need to returrn and chance deck list, because list are reference variable
 
 
 def game_start():
@@ -19,6 +24,9 @@ def game_start():
 
 def main():
     gamer, croupier, current_deck = game_start()
+    print(gamer.hand, current_deck)
+    print(gamer.hand, current_deck)
+    gamer.draw_a_card(current_deck)
     print(gamer.hand, current_deck)
     pass
 
